@@ -41,6 +41,13 @@ var app = angular.module('productIdGen', ['ui.router', 'ngRoute'])
 			url:'/products',
 			templateUrl: 'views/products.html',
 			controller: 'MainController'
+		})
+
+		.state('contact',{
+			url: '/contact',
+			templateUrl: 'views/contact.html',
+			controller: 'MainController'
+
 		});
 
 });

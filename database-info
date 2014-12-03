@@ -201,7 +201,8 @@ ALTER TABLE stop_types OWNER TO "Magda";
 
 CREATE TABLE products
 (
-  productName varchar(30) NOT NULL,
+  category varchar(20),
+  productName varchar(30),
   manufacturer varchar(20),
   manufacturerId varchar(20),
   dimensions varchar(20),

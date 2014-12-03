@@ -4,10 +4,18 @@ app.controller('MainController', function ($scope, mainService) {
 
 	$scope.test = 'This is a test';
 	$scope.products = ['Finials', 'Brackets', 'Masters', 'Carriers'];
-	$scope.product = [];
+	$scope.product = {
+	
+		// productName:
+		// manufacturer:
+		// manufacturerId
+		// material:
+		// dimensions:
+		// color:
+		// newProductId:
 
-		// $scope.categories = [];
-		// $scope.manufacturers = [];
+	};
+
 
 
 	$scope.getData = function() {
@@ -17,12 +25,14 @@ app.controller('MainController', function ($scope, mainService) {
 			$scope.manufacturers = res.data.manufacturers;
 			$scope.materials = res.data.materials;
 			$scope.colors = res.data.colors;
-			console.log(res.data)
 		})
 	}	
 
 	$scope.addProductId = function() {
-		mainService.addProductId($scope.newProductId)
+		// $scope.product.category = $scope.product.category.name;
+		// $scope.product.productName = $scope.product.productName;
+		// $scope.product.manufacturer = $scope.product.manufacturer.name;
+		mainService.addProductId($scope.product);
 	}
 
 

@@ -9,15 +9,29 @@ app.service('mainService', function ($http) {
 
 	},
 
-	this.addProductId = function(product, $scope) {
-		return $http({
-			method: 'POST',
-			url: '/products',
-			data: {}
-		}).then(function(newProductId){
-			return newProductId.data
-		});
+// 	this.addProductId = function(product, $scope) {
+// 		return $http({
+// 			method: 'POST',
+// 			url: 'http://localhost:3000/products',
+// 			data: {}
+// 		}).then(function(newProductId){
+// 			return newProductId.data
+// 		});
 		
+// }
+
+this.addProductId = function(product, callback) {
+   return $http( {
+   		method: 'POST',
+   		url: 'http://localhost:3000/products', 
+   		data: {product: product}
+   })
+   .success(function(data, status, headers, config){
+       console.log(data, 'working');
+   })
+       .error(function(data, status, headers, config) {
+           console.log(status);
+       })
 }
 
-	});
+	})

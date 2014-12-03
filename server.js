@@ -52,19 +52,20 @@ sequelize
 
 var Product = sequelize.define('products', {
 //    id: Sequelize.INTEGER,
+   category: Sequelize.STRING,
    productName: Sequelize.STRING,
    manufacturer: Sequelize.STRING,
    manufacturerId: Sequelize.STRING,
    dimensions: Sequelize.STRING,
    color: Sequelize.STRING,
-   newProductId: Sequelize.STRING,
+   newProductId: Sequelize.STRING
    
 }, {
    tableName: 'products', // this will define the table's name
    timestamps: false           // this will deactivate the timestamp columns
 });
 
-//sequelize
+// sequelize
 //    .sync({ force: true })
 //    .complete(function(err) {
 //        if (err) {
@@ -72,7 +73,7 @@ var Product = sequelize.define('products', {
 //        } else {
 //            console.log('It worked!')
 //        }
-//    })
+//    });
 
 //sequelize.query("SELECT * FROM orders").success(function(myTableRows) {
 //    console.log(myTableRows)
@@ -122,6 +123,7 @@ app.post('/products', function (req,res) {
    console.log(product);
    Product.create({
 //        id: 22,
+       category: product.category,
        productName: product.productName,
        manufacturer: product.manufacturer,
        manufacturerId: product.manufacturerId,
